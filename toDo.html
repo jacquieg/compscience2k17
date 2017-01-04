@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> To Do </title>
+        <style>
+        #topOfPage{
+        text-align:center;
+        }
+        #navbar a{
+            text-decoration:none;
+            color:white;
+        }
+        #navbar li{
+            display:inline;
+            text-decoration:none;
+            padding:20px;
+            border-style:groove;
+            background-image:url("http://data.whicdn.com/images/38909094/original.gif");
+            background-size:200px;
+        }
+        body{
+            background-image:url("http://www.whoa.in/20140224-Whoa/Happy-Mickey-Mouse-with-Red-Background-HD-Wallpaper.jpg");
+            background-size:1470px;
+        }
+        </style>
+    </head>
+    <script src="toDo.js"></script>
+    <body>
+<div id="topOfPage">
+  <ul id="navbar">
+      <li><a href="aboutMe.html">About Me</a></li>
+      <li><a href="hardware.html">Hardware</a></li>
+      <li><a href="howTo.html">How To</a></li>
+      <li><a href="Calc.html">Calculator</a></li>
+      <li><a href="toDo.html">To Do List</a></li>
+      <li><a href="vindinium.html">Vindinium</a></li>
+      <li><a href="bigProject.html">Big Project</a></li>
+  </ul>
+  <h1>To Do List</h1>
+  <form id="myform">
+    <div>
+        <div>
+            <h2>Add item:</h2>
+        </div>
+        <input type="text" id="newitem" />
+        <select id="options">
+            <option value="none">None</option>
+            <option value="underline">Underline</option>
+            <option value="italics">Italics</option>
+            <option value="highlight">Highlight</option>
+        </select>
+        <input type="submit" />
+        
+        <br><br>
+        <h2><div id="todolist"></div></h2>
+    </div>
+    
+    </form>
+  </section>
+    </body>
+    <script src="toDo.js"></script>
+    </body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>How To</title>
+    <style>
+        #topOfPage{
+        text-align:center;
+        }
+        #navbar a{
+            text-decoration:none;
+            color:white;
+        }
+        #navbar li{
+            display:inline;
+            text-decoration:none;
+            padding:20px;
+            border-style:groove;
+            background-image:url("http://data.whicdn.com/images/38909094/original.gif");
+            background-size:200px;
+        }
+        body{
+            background-image:url(https://wallpaperscraft.com/image/texture_background_wood_dark_50971_2048x1152.jpg);
+        }
+        h1{
+            color:white;
+            text-align:center;
+        }
+        table, tr, td {
+             border:2px groove blue;   
+        }
+        h3{
+            color:white;
+            text-align:center;
+        }
+        code{
+            color:white;
+        }
+        h4{
+            color:white;
+        }
+    </style>
+</head>
+<body>
+    
+<div id="topOfPage">
+  <ul id="navbar">
+      <li><a href="aboutMe.html">About Me</a></li>
+      <li><a href="hardware.html">Hardware</a></li>
+      <li><a href="howTo.html">How To</a></li>
+      <li><a href="Calc.html">Calculator</a></li>
+      <li><a href="toDo.html">To Do List</a></li>
+      <li><a href="vindinium.html">Vindinium</a></li>
+      <li><a href="bigProject.html">Big Project</a></li>
+  </ul>
+</div>
+    
+    <h1>How To Page</h1>
+    <h3>
+        
+    </h3>
+    <table>
+        <tr>
+            <td>
+                <h3>
+                   How to code a navbar
+                </h3>
+            </td>
+            <td>
+                <div id="topOfPage">
+                    <ul id="navbar">
+                        <li><a href="aboutMe.html">About Me</a></li>
+                        <li><a href="hardware.html">Hardware</a></li>
+                        <li><a href="howTo.html">How To</a></li>
+                    </ul>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <pre>
+                    <code>
+&lt;div id=&quot;topOfPage&quot;&gt;
+  &lt;ul id=&quot;navbar&quot;&gt;
+      &lt;li&gt;&lt;a href=&quot;aboutMe.html&quot;&gt;About Me&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;hardware.html&quot;&gt;Hardware&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;howTo.html&quot;&gt;How To&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;calculator.html&quot;&gt;Calculator&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;toDoPage.html&quot;&gt;To Do List&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;vindinium.html&quot;&gt;Vindinium&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;bigProject.html&quot;&gt;Big Project&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+                    </code>
+                </pre>
+            </td>
+            <td>
+                <h4>
+                   When adding a navbar to your webpage you have to put it inside the body tags.<br>
+                   A div with the id of "top of page" is added to place the navbar at the top of<br>
+                   your page. We also add another id of "navbar" which is used when styling and<br>
+                   under CSS. We use list tags to list every page that is to be linked to the webpage<br>
+                   you are on. 
+                </h4>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <pre>
+                    <code>
+#topOfPage{
+    text-align:center;
+}
+#navbar a{
+    text-decoration:none;
+    color:white;
+}
+#navbar li{
+    display:inline;
+    text-decoration:none;
+    padding:20px;
+    border-style:groove;
+    background-image:url("http://data.whicdn.com/images/38909094/original.gif");
+    background-size:200px;
+}
+                    </code>
+                </pre>
+            </td>
+            <td>
+                <h4>
+                    Under the CSS tags I added code to style my navbar. For example, I used the Id of <br>
+                    of "top of page" to place my navbar at the top of the my webpage, but also to<br>
+                    center it. I used a "navbar a" id to style the writing inside the boxes of the<br>
+                    navbar. By writing I mean the titles of the page like for example, "About me".<br>
+                    I used another id of "navbar li" to style around the titles of the pages. I <br>
+                    added an image behind the writing, a border around it, and just a bit of padding<br>
+                    to change the size of the box.<br>
+                </h4>
+            </td>
+        </tr>
+    </table>
+    
+    
+    <table>
+        <tr>
+            <td>
+                <h3>
+                   How to code a calculator 
+                </h3>
+            </td>
+            <td>
+<input type="text" name="input1" style="width:50px;" id="input1"/>
+<select id="dropdown">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">x</option>
+    <option value="/">/</option>
+   
+</select>
+<input type="text" name="input2" style="width:50px;" id="input2"/>
+<input type="button" value="calculate" id="submitbutton"/>
+<h2 style="color:white;">The answer is: <br> <span id="display"></span></h2>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <pre>
+                    <code>
+     &lt;input type=&quot;text&quot; name=&quot;input1&quot; style=&quot;width:50px;&quot; id=&quot;input1&quot;/&gt;
+     &lt;select id=&quot;dropdown&quot;&gt;
+            &lt;option value=&quot;+&quot;&gt;+&lt;/option&gt;
+            &lt;option value=&quot;-&quot;&gt;-&lt;/option&gt;
+            &lt;option value=&quot;*&quot;&gt;x&lt;/option&gt;
+            &lt;option value=&quot;/&quot;&gt;/&lt;/option&gt;
+    
+     &lt;/select&gt;
+     &lt;input type=&quot;text&quot; name=&quot;input2&quot; style=&quot;width:50px;&quot; id=&quot;input2&quot;/&gt;
+     &lt;input type=&quot;button&quot; value=&quot;calculate&quot; id=&quot;submitbutton&quot;/&gt;
+    &lt;h2 style=&quot;color:white;&quot;&gt;The answer is: &lt;br&gt; &lt;span id=&quot;display&quot;&gt;&lt;/span&gt;&lt;/h2&gt;
+                    </code>
+                </pre>
+            </td>
+            <td>
+                <h4>
+                  This part of the code is put into HTMl. What it does is set our calculator up as you <br>
+                  see in the box above. The HTMl only creates the look or design of it but doesn't <br>
+                  make it function completely. As you can clearly see it gives us more than one<br>
+                  option for operations we can use such as division, addition, or multiplication.<br>
+                  We also have a "calculate" button added so we can get our final answer. Right<br>
+                  below it we have a space provided for our given answer. 
+                </h4>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <pre>
+                    <code>
+var button = document.getElementById("submitbutton");
+var input1 = document.getElementById("input1");
+var input2 = document.getElementById("input2");
+var display = document.getElementById("display");
+var dropdown = document.getElementById("dropdown");
+var answer;
+
+
+button.addEventListener("click", doMath);
+
+function doMath(){
+    if (dropdown.value == "+"){
+        answer = parseInt(input1.value) + parseInt(input2.value);
+        display.innerHTML = answer;
+    }else if (dropdown.value =="-"){
+        answer = parseInt(input1.value) - parseInt(input2.value);
+        display.innerHTML = answer;
+    }else if (dropdown.value =="*"){
+        answer = parseInt(input1.value) * parseInt(input2.value);
+        display.innerHTML = answer;
+    }else if (dropdown.value =="/"){
+        answer = parseInt(input1.value) / parseInt(input2.value);
+        display.innerHTML = answer;
+    }
+}
+                    </code>
+                </pre>
+            </td>
+            <td>
+                <h4>
+                   This part of our code is now added to javascript. What we do here now is what <br>
+                   is what makes our calculator actually function. For example, under do math <br>
+                   we see if and else if statements. These are what connect our inputs, or in<br>
+                   other words the numbers that we are trying to calculate. Like if we want the <br>
+                   numbers to be added together, then inside the else if statement we tell the code<br>
+                   to add "input1" and "input2" together.
+                </h4>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
