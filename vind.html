@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Vindinium </title>
+        
+    </head>
+    <style>
+         #navbar a{
+            text-decoration:none;
+            color:white;
+        }
+        #navbar li{
+            display:inline;
+            text-decoration:none;
+            padding:20px;
+            border-style:groove;
+            background-image:url("http://data.whicdn.com/images/38909094/original.gif");
+            background-size:200px;
+        }
+         #topOfPage{
+        text-align:center;
+        }
+        table, td, tr{
+            border:2px solid ;
+        }
+        body{
+            background-color:pink 
+        }         
+        h2{
+            text-align:center;
+        }
+        
+    </style>
+        
+  
+    <body>   
+<div id="topOfPage">
+  <ul id="navbar">
+      <li><a href="aboutMe.html">About Me</a></li>
+      <li><a href="hardware.html">Hardware</a></li>
+      <li><a href="howTo.html">How To</a></li>
+      <li><a href="Calc.html">Calculator</a></li>
+      <li><a href="toDo.html">To Do List</a></li>
+      <li><a href="vind.html">Vindinium</a></li>
+      <li><a href="bigproject.html">Big Project</a></li>
+  </ul>
+  <h1> Vindinium </h1>
+</div>
+
+<table>
+    
+    <tr>
+        <td>
+            <img src="https://camo.githubusercontent.com/fbef31d9205dae9c3d8f816ef2979eebd33b7a53/68747470733a2f2f636c2e6c792f326d305a327a3051326133702f53637265656e25323053686f74253230323031362d31302d3038253230617425323032312e31322e33372e706e67"
+              width="250px" height="150px"> 
+        </td>
+        <td>
+            What is Vindinium?<br>
+            Vindinium is a video game that programmed using AI. Users must program their bots to do 3 things which are:<br>
+            <ul>.get mines<br>
+            .go to tavers<br>
+            .attack enemies<br>
+            </ul>
+        </td>
+    </tr>
+    
+    <tr>
+        <td colspan="2"> 
+       <h2>How I Coded My Bot</h2> 
+        </td>
+    </tr>
+     
+     <tr>
+        <td>
+            How My Bot Goes To Taverns At 50hp:<br>
+            <br>
+            When it comes specifically to this, I programmed<br>
+            my bot to go to the closest tavern for health<br>
+            when it is under 50hp. This is so that in<br>
+            situations like when it's in danger, it can stay<br>
+            alive. What the code does here is it looks at the positions<br>
+            of all the taverns. It the determines which is the<br>
+            nearest to my Bot wherever, depending on where it is on the map<br>
+            It then console.logs that it is heading towards the closest Tavern.<br>
+            The matter of when it takes this action is in the if else statement<br> 
+
+            
+        </td>
+        <td>
+            <code>
+                <pre>
+if(task === "tavern") {
+    var closestTavern = bot.taverns[0];
+        for( i = 0; i < bot.taverns.length; i++) {
+            if(bot.findDistance(myPos, closestTavern) > bot.findDistance(myPos, bot.taverns[i])) {
+                closestTavern = bot.taverns[i];
+              }
+        }
+        console.log("going to taverns");
+        myDir = bot.findDistance(myPos, closestTavern);
+        }
+        </pre>
+            </code>
+        </td>
+    </tr>
+    
+     <tr>
+        <td>
+            How It Claims A Free Mine:<br>
+            My Bot will now look at all the free mines in position.<br>
+            It determines which is closer, then determines the action of going to <br>
+            that mine to make it their own. My reasoning behind setting up the code this way<br>
+            was so that when the game begins, I will start getting gold very instantly and rapidly<br>
+            which helps me, the player, have better chances of winning the game.<br>
+        </td>
+        <td>
+            <pre>
+            <code>
+if(task === "freeMines") {
+    var closestMine = bot.freeMines[0];
+        for(i = 0; i < bot.freeMines.length; i++) {
+            if(bot.findDistance(myPos, closestMine) > bot.findDistance(myPos, bot.freeMines[i])) {
+                closestMine = bot.freeMines[i];
+            }
+        }
+        console.log("claiming free Mines");
+        myDir = bot.findPath(myPos, closestMine);
+    }
+            </code>
+            </pre>
+        </td>
+    </tr>
+    
+     <tr>
+        <td>
+            How To Attack Enemies<br>
+            When there are no more free mines in sight and the bots health is higher than 50hp<br>
+            it will start looking to attack enemy bots. This doesn't however mean that it looks to<br>
+            attack just any bot. It looks at each bots array, then determines which is closest.<br>
+            It then obviously goes towards them to eliminate them.<br>
+        </td>
+        <td>
+            <code>
+                <pre>
+if(task === "closestEnemy") {
+    var closestEnemy = bot.enemy[0];
+        for( i = 0; i < bot.enemy.length; i++) {
+            if(bot.findDistance(myPos, closestEnemy.posArray) > bot.findDistance(myPos, bot.enemy[i].posArray)) {
+               closestEnemy = bot.enemy[i];
+            }
+        }
+        console.log("attacking closest enemy");
+        myDir = bot.findDistance(myPos,closestEnemy.posArray);
+    }
+    </pre>
+            </code>
+        </td>
+    </tr>
+    
+     <tr>
+        <td>
+            What I Learned About AI:<br>
+            This was not my first year having an experience working with AI or vindinium, which ever you want to<br>
+            concider it, but last year I didn't get much of a feel or understanding behind the purposes or what<br>
+            this was. My very first time hearing about it, it truthfully didn't interest me as much as it<br>
+            should have, but this year I really tried to understand it and have as much of a good time coding<br>
+            as I was playing it. Thanks to the help of a peer, Understandind the code helped me much more.<br>
+            What I learned by playing and coding this was that to be a successful player you have to know<br>
+            tacticts and solutions to every aspect, such as: claiming freemines, attacking enemy bots, or simply<br>
+            just looking for taverns. Of course playing the game, there is always a simple way of getting it done,<br>
+            but the best part of the game is being able to challenge yourself to reach something higher than what is<br>
+            expected. Other players are in the same position as you are, which only makes the game much more intense.<br>
+            Using these skills in real life can help in many ways as well. Personally I believe so, but we are all<br>
+            different as individuals. Back to the subject, Ai and computer science are full og knowledge and getting<br>
+            an experience with these has helped me grow as a student.<br>
+                
+        </td>
+        <td>
+            <img src="https://camo.githubusercontent.com/fbef31d9205dae9c3d8f816ef2979eebd33b7a53/68747470733a2f2f636c2e6c792f326d305a327a3051326133702f53637265656e25323053686f74253230323031362d31302d3038253230617425323032312e31322e33372e706e67"width="250px" height="150px">
+        </td>
+    </tr>
+    
+</table>
+    </body>
+</html><!DOCTYPE html>
+<html>
+    <head>
+        <title>Vindinium </title>
+        
+    </head>
+    <style>
+         #navbar a{
+            text-decoration:none;
+            color:white;
+        }
+        #navbar li{
+            display:inline;
+            text-decoration:none;
+            padding:20px;
+            border-style:groove;
+            background-image:url("http://data.whicdn.com/images/38909094/original.gif");
+            background-size:200px;
+        }
+         #topOfPage{
+        text-align:center;
+        }
+        table, td, tr{
+            border:2px solid ;
+        }
+        body{
+            background-color:pink 
+        }         
+        h2{
+            text-align:center;
+        }
+        
+    </style>
+        
+  
+    <body>   
+<div id="topOfPage">
+  <ul id="navbar">
+      <li><a href="aboutMe.html">About Me</a></li>
+      <li><a href="hardware.html">Hardware</a></li>
+      <li><a href="howTo.html">How To</a></li>
+      <li><a href="Calc.html">Calculator</a></li>
+      <li><a href="toDo.html">To Do List</a></li>
+      <li><a href="vind.html">Vindinium</a></li>
+      <li><a href="bigProject.html">Big Project</a></li>
+  </ul>
+  <h1> Vindinium </h1>
+</div>
+
+<table>
+    
+    <tr>
+        <td>
+            <img src="https://camo.githubusercontent.com/fbef31d9205dae9c3d8f816ef2979eebd33b7a53/68747470733a2f2f636c2e6c792f326d305a327a3051326133702f53637265656e25323053686f74253230323031362d31302d3038253230617425323032312e31322e33372e706e67"
+              width="250px" height="150px"> 
+        </td>
+        <td>
+            What is Vindinium?<br>
+            Vindinium is a video game that programmed using AI. Users must program their bots to do 3 things which are:<br>
+            <ul>.get mines<br>
+            .go to tavers<br>
+            .attack enemies<br>
+            </ul>
+        </td>
+    </tr>
+    
+    <tr>
+        <td colspan="2"> 
+       <h2>How I Coded My Bot</h2> 
+        </td>
+    </tr>
+     
+     <tr>
+        <td>
+            How My Bot Goes To Taverns At 50hp:<br>
+            <br>
+            When it comes specifically to this, I programmed<br>
+            my bot to go to the closest tavern for health<br>
+            when it is under 50hp. This is so that in<br>
+            situations like when it's in danger, it can stay<br>
+            alive. What the code does here is it looks at the positions<br>
+            of all the taverns. It the determines which is the<br>
+            nearest to my Bot wherever, depending on where it is on the map<br>
+            It then console.logs that it is heading towards the closest Tavern.<br>
+            The matter of when it takes this action is in the if else statement<br> 
+
+            
+        </td>
+        <td>
+            <code>
+                <pre>
+if(task === "tavern") {
+    var closestTavern = bot.taverns[0];
+        for( i = 0; i < bot.taverns.length; i++) {
+            if(bot.findDistance(myPos, closestTavern) > bot.findDistance(myPos, bot.taverns[i])) {
+                closestTavern = bot.taverns[i];
+              }
+        }
+        console.log("going to taverns");
+        myDir = bot.findDistance(myPos, closestTavern);
+        }
+        </pre>
+            </code>
+        </td>
+    </tr>
+    
+     <tr>
+        <td>
+            How It Claims A Free Mine:<br>
+            My Bot will now look at all the free mines in position.<br>
+            It determines which is closer, then determines the action of going to <br>
+            that mine to make it their own. My reasoning behind setting up the code this way<br>
+            was so that when the game begins, I will start getting gold very instantly and rapidly<br>
+            which helps me, the player, have better chances of winning the game.<br>
+        </td>
+        <td>
+            <pre>
+            <code>
+if(task === "freeMines") {
+    var closestMine = bot.freeMines[0];
+        for(i = 0; i < bot.freeMines.length; i++) {
+            if(bot.findDistance(myPos, closestMine) > bot.findDistance(myPos, bot.freeMines[i])) {
+                closestMine = bot.freeMines[i];
+            }
+        }
+        console.log("claiming free Mines");
+        myDir = bot.findPath(myPos, closestMine);
+    }
+            </code>
+            </pre>
+        </td>
+    </tr>
+    
+     <tr>
+        <td>
+            How To Attack Enemies<br>
+            When there are no more free mines in sight and the bots health is higher than 50hp<br>
+            it will start looking to attack enemy bots. This doesn't however mean that it looks to<br>
+            attack just any bot. It looks at each bots array, then determines which is closest.<br>
+            It then obviously goes towards them to eliminate them.<br>
+        </td>
+        <td>
+            <code>
+                <pre>
+if(task === "closestEnemy") {
+    var closestEnemy = bot.enemy[0];
+        for( i = 0; i < bot.enemy.length; i++) {
+            if(bot.findDistance(myPos, closestEnemy.posArray) > bot.findDistance(myPos, bot.enemy[i].posArray)) {
+               closestEnemy = bot.enemy[i];
+            }
+        }
+        console.log("attacking closest enemy");
+        myDir = bot.findDistance(myPos,closestEnemy.posArray);
+    }
+    </pre>
+            </code>
+        </td>
+    </tr>
+    
+     <tr>
+        <td>
+            What I Learned About AI:<br>
+            This was not my first year having an experience working with AI or vindinium, which ever you want to<br>
+            concider it, but last year I didn't get much of a feel or understanding behind the purposes or what<br>
+            this was. My very first time hearing about it, it truthfully didn't interest me as much as it<br>
+            should have, but this year I really tried to understand it and have as much of a good time coding<br>
+            as I was playing it. Thanks to the help of a peer, Understandind the code helped me much more.<br>
+            What I learned by playing and coding this was that to be a successful player you have to know<br>
+            tacticts and solutions to every aspect, such as: claiming freemines, attacking enemy bots, or simply<br>
+            just looking for taverns. Of course playing the game, there is always a simple way of getting it done,<br>
+            but the best part of the game is being able to challenge yourself to reach something higher than what is<br>
+            expected. Other players are in the same position as you are, which only makes the game much more intense.<br>
+            Using these skills in real life can help in many ways as well. Personally I believe so, but we are all<br>
+            different as individuals. Back to the subject, Ai and computer science are full og knowledge and getting<br>
+            an experience with these has helped me grow as a student.<br>
+                
+        </td>
+        <td>
+            <img src="https://camo.githubusercontent.com/fbef31d9205dae9c3d8f816ef2979eebd33b7a53/68747470733a2f2f636c2e6c792f326d305a327a3051326133702f53637265656e25323053686f74253230323031362d31302d3038253230617425323032312e31322e33372e706e67"width="250px" height="150px">
+        </td>
+    </tr>
+    
+</table>
+    </body>
+</html>
